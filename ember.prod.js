@@ -35101,7 +35101,7 @@ enifed('ember-runtime/system/core_object', ['exports', 'ember-metal/debug', 'emb
               if (typeof this.setUnknownProperty === 'function' && !(keyName in this)) {
                 this.setUnknownProperty(keyName, value);
               } else {
-                this[keyName] = value;
+                _emberMetalProperties.defineProperty(this, keyName, null, value); // setup mandatory setter
               }
             }
           }
